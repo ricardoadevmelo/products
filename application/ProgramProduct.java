@@ -10,18 +10,17 @@ public class ProgramProduct {
         Locale.setDefault(Locale.UK);
         Scanner scanner = new Scanner(System.in);
 
-        Product product = new Product();
-
         System.out.println("Enter product data: ");
         System.out.print("Name: ");
-        product.name = scanner.nextLine();
+        String name = scanner.nextLine();
         System.out.print("Price: ");
-        product.price = scanner.nextDouble();
+        double price = scanner.nextDouble();
         System.out.print("Quantity in stock: ");
-        product.quantity = scanner.nextInt();
+        int quantity = scanner.nextInt();
+        Product product = new Product(name, price, quantity);
         System.out.println("Product data: " + product);
         System.out.print("Enter the number of products to be added in stock: ");
-        int quantity = scanner.nextInt();
+        quantity = scanner.nextInt();
         product.addProducts(quantity);
         System.out.println("Updated data: " + product);
         System.out.print("Enter the number of products to be removed from stock: ");
